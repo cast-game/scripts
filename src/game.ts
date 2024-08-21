@@ -1,7 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import * as readline from "readline";
-
-const prisma = new PrismaClient();
+import { prisma } from "./prisma";
 
 const rl = readline.createInterface({
 	input: process.stdin,
