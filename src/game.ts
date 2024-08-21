@@ -1,5 +1,5 @@
 import * as readline from "readline";
-import { prisma } from "./prisma";
+import { prisma } from "./utils/prisma";
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -49,8 +49,6 @@ async function main() {
 		const resJson = await res.json();
 		const channelUrl = resJson.channel.parent_url;
     
-    console.log(resJson.channel);
-
 		// Calculate end dates
 		const tradingEnd = addHours(start, tradingDurationHours);
 		const gameEnd = addHours(start, gameDurationHours);
